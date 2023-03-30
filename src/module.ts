@@ -33,7 +33,6 @@ export default defineNuxtModule<ModuleOptions>({
       throw new Error('APPWRITE_ENDPOINT is not defined')
     }
 
-
     nuxt.options.nitro.devProxy = {
       ...nuxt.options.nitro.devProxy,
       [options.proxyRoute]: {
@@ -60,6 +59,8 @@ export default defineNuxtModule<ModuleOptions>({
         }
       }
     }
+
+    nuxt.options.modules.push('@pinia/nuxt');
 
     const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugins/appwrite'))

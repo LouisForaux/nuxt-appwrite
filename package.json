@@ -37,8 +37,10 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.1.2",
+    "@pinia/nuxt": "^0.4.7",
     "appwrite": "^10.2.0",
-    "node-appwrite": "^8.2.0"
+    "node-appwrite": "^8.2.0",
+    "pinia": "^2.0.33"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
@@ -49,5 +51,8 @@
     "eslint": "^8.33.0",
     "nuxt": "^3.1.2",
     "vitest": "^0.28.4"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }
