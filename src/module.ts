@@ -60,12 +60,13 @@ export default defineNuxtModule<ModuleOptions>({
       }
     }
 
-    nuxt.options.modules.push('@pinia/nuxt');
-
     const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugins/appwrite'))
     addImportsDir(resolver.resolve('./runtime', "composables"));
     addImportsDir(resolver.resolve('./runtime/server', "composables"));
+
+    nuxt.options.modules.push('@pinia/nuxt');
+    addImportsDir(resolver.resolve('./runtime', "store"));
 
     if (options.guardRoutes.length > 0) {
       if (options.guardSSR) {
